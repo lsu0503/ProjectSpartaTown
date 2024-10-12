@@ -2,16 +2,23 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DataDictionary: MonoBehaviour
+public class DataDictionary
 {
     private static DataDictionary instance;
     public static DataDictionary Instance()
     {
         if (instance == null)
+        {
             instance = new DataDictionary();
-        
+            instance.AvartarDict.Clear();
+            instance.ColorDict.Clear();
+            instance.isDicted = false;
+        }
+
         return instance;
     }
+
+    public bool isDicted; // 할당 여부 확인. [Dicted라는 영어는 없다, 그냥 Dictionary화 했는지에 대한 여부]
 
     // 캐릭터 외형(아바타) 사전
     private Dictionary<int, Avartar> AvartarDict = new Dictionary<int, Avartar>();
@@ -24,13 +31,4 @@ public class DataDictionary: MonoBehaviour
     public Color GetColor(int key) { return ColorDict[key]; }
     public int GetColorListLength() { return ColorDict.Count; }
     public void AddColor(int key, Color _color) { ColorDict.Add(key, _color); }
-
-    public bool isDicted; // 할당 여부 확인. [Dicted라는 영어는 없다, 그냥 ]Dictionary화 했는지에 대한 여부]
-
-    public DataDictionary()
-    {
-        isDicted = false;
-        AvartarDict.Clear();
-        ColorDict.Clear();
-    }
 }
