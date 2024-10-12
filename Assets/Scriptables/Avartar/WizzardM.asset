@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59134fbc5cf274d439cb6a9ef6b26e37, type: 3}
+  m_Name: WizzardM
+  m_EditorClassIdentifier: 
+  avertarID: 4
+  avatarName: "\uD604\uC790(\uB0A8)"
+  idleSprite: {fileID: 21300000, guid: a509b4de38f463c45a4efb215033eeed, type: 3}
+  idleAni: {fileID: 7400000, guid: 3f71b5d94ab669e4ea4e2538dadbc3c1, type: 2}
+  runAni: {fileID: 7400000, guid: a530633547d94bf418e552aa9fc3d0f7, type: 2}
+  animator: {fileID: 22100000, guid: 193cad0392f83ba4686879c5b552f15f, type: 2}
