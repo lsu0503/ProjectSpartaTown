@@ -7,13 +7,13 @@ public class CharacterAnimationController : AnimationController
     private static readonly int runDirection = Animator.StringToHash("runDirection");
     private readonly float magnituteThreshold = 0.5f;
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     private bool isFlipX;
 
     protected override void Awake()
     {
         base.Awake();
-        renderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
@@ -41,6 +41,6 @@ public class CharacterAnimationController : AnimationController
         else
             isFlipX = false;
 
-        renderer.flipX = isFlipX;
+        spriteRenderer.flipX = isFlipX;
     }
 }

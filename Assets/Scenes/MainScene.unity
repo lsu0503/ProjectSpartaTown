@@ -5695,6 +5695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 411403075}
+  dialogContainer: {fileID: 0}
 --- !u!1 &615706242
 GameObject:
   m_ObjectHideFlags: 0
@@ -20354,7 +20355,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -25, y: -160}
-  m_SizeDelta: {x: 250, y: 200}
+  m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2115319871
 MonoBehaviour:
@@ -20665,6 +20666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 2929622231944985650, guid: edddcc9ab014947448bda00fe3d03df3, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 3090768894958157598, guid: edddcc9ab014947448bda00fe3d03df3, type: 3}
       propertyPath: scriptList.Array.size
       value: 3
@@ -20679,7 +20684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3090768894958157598, guid: edddcc9ab014947448bda00fe3d03df3, type: 3}
       propertyPath: scriptList.Array.data[2]
-      value: "\uD587\uC0B4\uC740 \uB530\uC0AC\uB86D\uB2E4\uB358\uB370, \uB530\uC0AC\uB86D\uB2E4\uB294
+      value: "\uD587\uC0B4\uC740 \uB530\uC0AC\uB86D\uB2E4\uB358\uB370,\n\uB530\uC0AC\uB86D\uB2E4\uB294
         \uAC8C \uBB50\uC57C?"
       objectReference: {fileID: 0}
     - target: {fileID: 8840229309671472053, guid: edddcc9ab014947448bda00fe3d03df3, type: 3}

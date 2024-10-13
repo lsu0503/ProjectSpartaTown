@@ -24,7 +24,7 @@ public class DialogDisplayer : MonoBehaviour
     {
         textMesh.text = dialogText;
         curTime = 0.0f;
-        dialogTime = 0.5f * dialogText.Length;
+        dialogTime = 0.2f * dialogText.Length;
 
         if (!gameObject.activeSelf)
             gameObject.SetActive(true);

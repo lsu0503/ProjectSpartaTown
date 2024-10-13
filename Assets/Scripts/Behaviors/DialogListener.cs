@@ -15,7 +15,7 @@ public class DialogListener : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             DialogContainer? container = collision.gameObject.GetComponent<DialogContainer>();
-            if (container != null)
+            if (!ReferenceEquals(container, dialogContainer))
                 dialogContainer = container;
         }
     }
@@ -23,12 +23,15 @@ public class DialogListener : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         DialogContainer? container = collision.gameObject.GetComponent<DialogContainer>();
-        if (container != null)
+        if (ReferenceEquals(container, dialogContainer))
             dialogContainer = null;
     }
 
     private void DoDialog()
     {
-
+        if(dialogContainer != null)
+        {
+            dialogContainer.DoDialog();
+        }
     }
 }
