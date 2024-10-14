@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#nullable enable
+using UnityEngine;
 
 public class DialogListener : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class DialogListener : MonoBehaviour
         {
             DialogContainer? container = collision.gameObject.GetComponent<DialogContainer>();
             if (!ReferenceEquals(container, dialogContainer))
+            {
                 dialogContainer = container;
+                GameManager.instance.SetInteractionTarget(collision.gameObject);
+            }
         }
     }
 
@@ -24,7 +28,10 @@ public class DialogListener : MonoBehaviour
     {
         DialogContainer? container = collision.gameObject.GetComponent<DialogContainer>();
         if (ReferenceEquals(container, dialogContainer))
+        {
             dialogContainer = null;
+            GameManager.instance.ClearInteractionTarget();
+        }
     }
 
     private void DoDialog()

@@ -2,15 +2,13 @@
 
 public class NPCDataContainer : DataContainer
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        if(collision.gameObject.CompareTag("Community"))
-            GameManager.instance.AddCharacterToCharacterList(character);
+        GameManager.instance.AddCharacterToCharacterList(character);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnDestroy()
     {
-        if(collision.gameObject.CompareTag("Community"))
-            GameManager.instance.RemoveCharacterFromCharacterList(character);
+        GameManager.instance.RemoveCharacterFromCharacterList(character);
     }
 }

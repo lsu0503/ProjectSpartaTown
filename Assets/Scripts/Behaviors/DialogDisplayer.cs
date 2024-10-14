@@ -22,11 +22,11 @@ public class DialogDisplayer : MonoBehaviour
 
     public void SetDialog(string dialogText)
     {
-        textMesh.text = dialogText;
-        curTime = 0.0f;
-        dialogTime = 0.2f * dialogText.Length;
-
         if (!gameObject.activeSelf)
             gameObject.SetActive(true);
+
+        textMesh.text = dialogText;
+        curTime = 0.0f;
+        dialogTime = 0.5f  + (0.05f * dialogText.Length);
     }
 }

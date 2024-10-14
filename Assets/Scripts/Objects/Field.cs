@@ -29,7 +29,6 @@ public class Field : MonoBehaviour
                 isActivated = false;
             }
         }
-
     }
 
     public int GetID() { return fieldID; }

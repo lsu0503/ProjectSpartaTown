@@ -1,4 +1,6 @@
-﻿using System;
+﻿#nullable enable
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterListUI characterListUI;
 
     public event Action<int> FieldActivateEvent;
+    private GameObject? interactionTarget;
+    [SerializeField] private GameObject CommandUI;
 
     private void Awake()
     {
@@ -39,11 +43,25 @@ public class GameManager : MonoBehaviour
 
     public void AddCharacterToCharacterList(Character character)
     {
-        characterListUI.AddCharacterToCharacterList(character);
+        if(characterListUI != null)
+            characterListUI.AddCharacterToCharacterList(character);
     }
 
     public void RemoveCharacterFromCharacterList(Character character)
     {
-        characterListUI.RemoveCharacterFromCharacterList(character);
+        if (characterListUI != null)
+            characterListUI.RemoveCharacterFromCharacterList(character);
+    }
+
+    public void SetInteractionTarget(GameObject _target)
+    {
+        CommandUI.SetActive(true);
+        interactionTarget = _target;
+    }
+
+    public void ClearInteractionTarget()
+    {
+        CommandUI.SetActive(false);
+        interactionTarget = null;
     }
 }

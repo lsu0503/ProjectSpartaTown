@@ -7,6 +7,13 @@ public class CharacterListUI : MonoBehaviour
     public List<Character> characterList = new List<Character>();
     [SerializeField] private GameObject nameLinePrf;
     private List<CharacterListIndUI> nameLines = new List<CharacterListIndUI>();
+    [SerializeField] private TextMeshProUGUI totalAmount;
+    [SerializeField] private GameObject nameLineField;
+
+    private void Update()
+    {
+        totalAmount.text = string.Format($"{characterList.Count.ToString()}명");
+    }
 
     public void AddCharacterToCharacterList(Character character)
     {
@@ -14,7 +21,7 @@ public class CharacterListUI : MonoBehaviour
         {
             characterList.Add(character);
 
-            CharacterListIndUI temp = Instantiate(nameLinePrf, this.transform).GetComponent<CharacterListIndUI>();
+            CharacterListIndUI temp = Instantiate(nameLinePrf, nameLineField.transform).GetComponent<CharacterListIndUI>();
             temp.SetCharacter(character);
             nameLines.Add(temp);
         }
@@ -24,7 +31,7 @@ public class CharacterListUI : MonoBehaviour
     {
         int targetIdx = characterList.FindIndex(id => ReferenceEquals(character, id));
 
-        if (targetIdx > 0)
+        if (targetIdx >= 0)
         {
             nameLines[targetIdx].RemoveLine();
             nameLines.RemoveAt(targetIdx);

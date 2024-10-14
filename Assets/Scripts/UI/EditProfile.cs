@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,9 +16,9 @@ public class EditProfile: MonoBehaviour
     [SerializeField] private Character tempCharacter;
     [SerializeField] private bool isInGame;
 
-    private Image imageCharacter;
+    private Image? imageCharacter;
 
-    private TMP_InputField nameInputSpace;
+    private TMP_InputField? nameInputSpace;
 
     private void Awake()
     {
